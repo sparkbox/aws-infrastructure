@@ -2,7 +2,7 @@ variable "users" {
   type    = list(string)
 }
 
-variable "pgp_path" {
+variable "pgp_key" {
   type    = string
 }
 

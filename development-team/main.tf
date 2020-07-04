@@ -1,6 +1,3 @@
-data "local_file" "pgp_key" {
-  filename = var.pgp_path
-}
 
 /**********************************
 * ORGANIZATION SPECIFIC RESOURCES *
@@ -28,7 +25,7 @@ resource "aws_iam_user" "user" {
 resource "aws_iam_user_login_profile" "user" {
   for_each = aws_iam_user.user
   user    = each.value.name
-  pgp_key = data.local_file.pgp_key.content_base64
+  pgp_key = var.pgp_key
 }
 
 resource "aws_organizations_account" "account" {

@@ -1,8 +1,7 @@
 /* You can export your public gpg key via
 *
-*  gpg --output /path/to/your/public/gpg/file -binary --export email@heysparkbox.com 
+*  gpg -binary --export email@heysparkbox.com | base64 | pbcopy
 *
 * */
-pgp_path  = "/path/to/your/public/gpg/file"
-
+pgp_key  = "BASE64 ENCODED PUBLIC KEY BINARY"
 
