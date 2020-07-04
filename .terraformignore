@@ -1,0 +1,4 @@
+.git
+.terraform
+.local.auto.tfvars
+

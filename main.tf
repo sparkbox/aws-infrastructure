@@ -3,6 +3,17 @@ provider "aws" {
   region  = "us-east-2"
 }
 
+terraform {
+  backend "remote" {
+    hostname = "app.terraform.io"
+    organization = "Sparkbox"
+
+    workspaces {
+      name = "aws-infrastructure"
+    }
+  }
+}
+
 variable "dev_team_members" {
   type = list(string)
 }
