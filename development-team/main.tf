@@ -97,7 +97,3 @@ resource "aws_iam_user_policy_attachment" "attach_link_policy" {
   policy_arn = aws_iam_policy.link_member_account_policy.arn
 }
 */
-
-output "passwords" {
-  value = aws_iam_user_login_profile.user
-}
