@@ -1,16 +1,3 @@
-provider "aws" {
-  profile = "default"
-  region  = "us-east-2"
-}
-
-variable "users" {
-  type    = list(string)
-}
-
-variable "pgp_path" {
-  type    = string
-}
-
 data "local_file" "pgp_key" {
   filename = var.pgp_path
 }

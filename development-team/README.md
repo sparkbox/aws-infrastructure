@@ -1,6 +1,6 @@
 # AWS Infrastructure - Development Team Provisioning
 
-This Terraform workflow provisions development team AWS accounts, including
+The Development Team module provisions development team AWS accounts, including
 sandbox member accounts in the Development Team organizational unit.
 
 ## Background
