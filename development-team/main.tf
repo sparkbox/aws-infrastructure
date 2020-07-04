@@ -24,12 +24,14 @@ resource "aws_iam_user" "user" {
 
 resource "aws_iam_user_login_profile" "user" {
   for_each = aws_iam_user.user
+
   user    = each.value.name
   pgp_key = var.pgp_key
 }
 
 resource "aws_organizations_account" "account" {
   for_each  = aws_iam_user.user
+
   name      = "Dev Sandbox ${each.value.name}"
   email     = "ryan+aws_${each.value.name}@heysparkbox.com"
   role_name = "Administrator"
@@ -38,6 +40,7 @@ resource "aws_organizations_account" "account" {
 
 resource "aws_iam_role" "organization_account_access_role" {
   for_each  = aws_organizations_account.account
+
   name = "OrganizationAccountAccessRole-${each.value.id}"
 
   assume_role_policy = <<EOF
@@ -89,11 +92,9 @@ resource "aws_iam_policy" "link_member_account_policy" {
 EOF
 }
 
-/*
 resource "aws_iam_user_policy_attachment" "attach_link_policy" {
   for_each   = aws_iam_user.user
 
   user       = each.value.name
-  policy_arn = aws_iam_policy.link_member_account_policy.arn
+  policy_arn = aws_iam_policy.link_member_account_policy[each.value.name].arn
 }
-*/
