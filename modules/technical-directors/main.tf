@@ -2,7 +2,7 @@ resource "aws_iam_group" "technical_directors" {
   name = "TechnicalDirectors"
 }
 
-resource "aws_iam_group_policy_attachment" "developers-change-password-policy" {
+resource "aws_iam_group_policy_attachment" "technical-directors-administrator-policy" {
   group      = aws_iam_group.technical_directors.name
   policy_arn = "arn:aws:iam::aws:policy/AdministratorAccess"
 }
