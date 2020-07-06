@@ -14,12 +14,22 @@ terraform {
   }
 }
 
+variable "technical_directors" {
+  type = list(string)
+}
+
 variable "dev_team_members" {
   type = list(string)
 }
 
 variable "pgp_key" {
   type = string
+}
+
+module "technical-directors" {
+  source    = "./modules/technical-directors/"
+
+  usernames = var.technical_directors
 }
 
 module "development-team" {
