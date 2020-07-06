@@ -1,3 +1,18 @@
+resource "aws_iam_group" "developers" {
+  name = "Developers"
+}
+
+resource "aws_iam_group_policy_attachment" "developers-change-password-policy" {
+  group      = aws_iam_group.developers.name
+  policy_arn = "arn:aws:iam::aws:policy/IAMUserChangePassword"
+}
+
+resource "aws_iam_group_membership" "team" {
+  name = "DevelopersGroupMembership"
+
+  users = var.users
+  group = aws_iam_group.developers.name
+}
 
 /**********************************
 * ORGANIZATION SPECIFIC RESOURCES *
