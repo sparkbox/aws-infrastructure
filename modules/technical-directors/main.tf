@@ -7,7 +7,7 @@ resource "aws_iam_group_policy_attachment" "developers-change-password-policy" {
   policy_arn = "arn:aws:iam::aws:policy/AdministratorAccess"
 }
 
-resource "aws_iam_group_membership" "team" {
+resource "aws_iam_group_membership" "tech-directors-group-membership" {
   name = "TechnicalDirectorsGroupMembership"
 
   users = var.usernames
