@@ -19,6 +19,7 @@ resource "aws_organizations_organizational_unit" "dev_team_ou" {
 
 resource "aws_iam_user" "user" {
   for_each = toset(var.users)
+
   name = each.value
 }
 
