@@ -23,7 +23,7 @@ variable "pgp_key" {
 }
 
 module "development-team" {
-  source = "./development-team/"
+  source = "./modules/development-team/"
 
   users   = var.dev_team_members
   pgp_key = var.pgp_key
