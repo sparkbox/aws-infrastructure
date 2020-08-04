@@ -5,7 +5,8 @@ dev_team_members = [
   "bryanbraun",
   "yosevukilonzo",
   "robtarr",
-  "kaseybonifacio"
+  "kaseybonifacio",
+  "devperson"
 ]
 
 technical_directors = [
