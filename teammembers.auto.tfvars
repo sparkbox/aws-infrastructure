@@ -1,5 +1,6 @@
 dev_team_members = [
   "adamsimpson",
+  "bengodfrey",
   "ryancromwell",
   "bryanbraun",
   "yosevukilonzo",
