@@ -39,11 +39,16 @@ module "development-team" {
   pgp_key = var.pgp_key
 }
 
+output "development-team-initial-passwords" {
+  value = module.development-team.initial-passwords
+}
+
 module "terraform-automation" {
   source  = "./modules/terraform-automation/"
 
   pgp_key = var.pgp_key
 }
+
 
 output "terraform-automation-secret" {
   value = module.terraform-automation.secret
