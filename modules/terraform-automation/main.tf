@@ -20,6 +20,7 @@ resource "aws_iam_user_policy" "terraform-user-iam-access-policy" {
         "iam:*Group",
         "iam:GetUserPolicy",
         "iam:GetLoginProfile",
+        "iam:CreateLoginProfile",
         "iam:GetRole",
         "iam:GetPolicy",
         "iam:GetPolicyVersion",
