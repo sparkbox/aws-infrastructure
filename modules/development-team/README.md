@@ -31,11 +31,15 @@ their own developer sandbox account following the configuration guidance for
 required to create a new password. We recommend generating and
 storing this password using 1Password.
 
-
 **Switch Role**
 You have your own AWS account which is unique to you in which you can
 experiment and deploy with AWS services.
-[Switch to that account as an administrator][Switch to Account].
+[Switch to that account as an administrator][Switch to Account], using settings like these:
+
+* Account: [Your Account ID]
+* Role: Administrator
+* Display Name: [Your preferred display name]
+* Color: [Your preferred color]
 
 You now have the ability to create new resources under your account, while
 billing is managed by the Sparkbox Main Account. Budget alerts are configured,
@@ -46,4 +50,4 @@ Technical Director.
 
 [AWS Organizations]: https://docs.aws.amazon.com/organizations/?id=docs_gateway
 [Accessing Member Accounts]: https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html
-[Switch to Account]: https://signin.aws.amazon.com/switchrole?roleName=OrganizationAccountAccessRole-466417273521&account=sparkbox
+[Switch to Account]: https://signin.aws.amazon.com/switchrole?roleName=Administrator&account=466417273521
