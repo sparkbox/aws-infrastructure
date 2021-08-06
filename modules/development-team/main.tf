@@ -1,5 +1,12 @@
 locals {
-  enabled_users = var.users
+  enabled_user_names = [
+    for user in var.users : user.name
+    if user.is_enabled
+  ]
+
+  all_user_names = toset([
+    for user in var.users : user.name
+  ])
 }
 
 resource "aws_iam_group" "developers" {
@@ -14,7 +21,7 @@ resource "aws_iam_group_policy_attachment" "developers-change-password-policy" {
 resource "aws_iam_group_membership" "developers-group-membership" {
   name = "DevelopersGroupMembership"
 
-  users = local.enabled_users
+  users = local.enabled_user_names
   group = aws_iam_group.developers.name
 }
 
@@ -37,7 +44,7 @@ resource "aws_organizations_organizational_unit" "dev_team_ou" {
 ***************************/
 
 resource "aws_iam_user" "user" {
-  for_each = toset(local.enabled_users)
+  for_each = toset(local.enabled_user_names)
 
   name = each.value
 }
@@ -50,10 +57,10 @@ resource "aws_iam_user_login_profile" "user" {
 }
 
 resource "aws_organizations_account" "account" {
-  for_each  = aws_iam_user.user
+  for_each  = local.all_user_names
 
-  name      = "Dev Sandbox ${each.value.name}"
-  email     = "ryan+aws_${each.value.name}@heysparkbox.com"
+  name      = "Dev Sandbox ${each.value}"
+  email     = "ryan+aws_${each.value}@heysparkbox.com"
   role_name = "Administrator"
   parent_id = aws_organizations_organizational_unit.dev_team_ou.id
 }

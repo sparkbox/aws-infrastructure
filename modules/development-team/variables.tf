@@ -1,5 +1,8 @@
 variable "users" {
-  type    = list(string)
+  type    = list(object({
+    name = string
+    is_enabled = bool
+  }))
 }
 
 variable "pgp_key" {

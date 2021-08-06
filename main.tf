@@ -19,7 +19,11 @@ variable "technical_directors" {
 }
 
 variable "dev_team_members" {
-  type = list(string)
+  type    = list(object({
+    name = string
+    is_enabled = bool
+  }))
+
 }
 
 variable "pgp_key" {

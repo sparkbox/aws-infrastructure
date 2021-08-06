@@ -1,12 +1,12 @@
 dev_team_members = [
-  "adamsimpson",
-  "ryancromwell",
-  "bryanbraun",
-  "yosevukilonzo",
-  "robtarr",
-  "kaseybonifacio",
-  "devperson",
-  "ricardofearing"
+  { name = "adamsimpson", is_enabled = true },
+  { name = "ryancromwell", is_enabled = true },
+  { name = "bryanbraun", is_enabled = true },
+  { name = "yosevukilonzo", is_enabled = true },
+  { name = "robtarr", is_enabled = true },
+  { name = "kaseybonifacio", is_enabled = true },
+  { name = "devperson", is_enabled = true },
+  { name = "ricardofearing", is_enabled = true }
 ]
 
 technical_directors = [
