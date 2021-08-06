@@ -1,3 +1,7 @@
+locals {
+  enabled_users = var.users
+}
+
 resource "aws_iam_group" "developers" {
   name = "Developers"
 }
@@ -10,7 +14,7 @@ resource "aws_iam_group_policy_attachment" "developers-change-password-policy" {
 resource "aws_iam_group_membership" "developers-group-membership" {
   name = "DevelopersGroupMembership"
 
-  users = var.users
+  users = local.enabled_users
   group = aws_iam_group.developers.name
 }
 
@@ -33,7 +37,7 @@ resource "aws_organizations_organizational_unit" "dev_team_ou" {
 ***************************/
 
 resource "aws_iam_user" "user" {
-  for_each = toset(var.users)
+  for_each = toset(local.enabled_users)
 
   name = each.value
 }
