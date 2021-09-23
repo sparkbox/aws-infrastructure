@@ -54,6 +54,14 @@ resource "aws_iam_user_login_profile" "user" {
 
   user    = each.value.name
   pgp_key = var.pgp_key
+
+  lifecycle {
+    ignore_changes = [
+      password_length,
+      password_reset_required,
+      pgp_key,
+    ]
+  }
 }
 
 resource "aws_organizations_account" "account" {
