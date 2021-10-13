@@ -68,7 +68,7 @@ resource "aws_organizations_account" "account" {
   for_each  = local.all_user_names
 
   name      = "Dev Sandbox ${each.value}"
-  email     = "ryan+aws_${each.value}@heysparkbox.com"
+  email     = "tarr+aws_${each.value}@heysparkbox.com"
   role_name = "Administrator"
   parent_id = aws_organizations_organizational_unit.dev_team_ou.id
 }

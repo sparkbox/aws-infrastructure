@@ -1,6 +1,5 @@
 dev_team_members = [
   { name = "adamsimpson", is_enabled = true },
-  { name = "ryancromwell", is_enabled = true },
   { name = "bryanbraun", is_enabled = true },
   { name = "yosevukilonzo", is_enabled = true },
   { name = "robtarr", is_enabled = true },
@@ -15,6 +14,5 @@ dev_team_members = [
 technical_directors = [
   "adamsimpson",
   "kaseybonifacio",
-  "robtarr",
-  "ryancromwell"
+  "robtarr"
 ]
