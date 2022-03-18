@@ -5,7 +5,6 @@ dev_team_members = [
   { name = "robtarr", is_enabled = true },
   { name = "kaseybonifacio", is_enabled = true },
   { name = "devperson", is_enabled = false },
-  { name = "ricardofearing", is_enabled = true },
   { name = "reedspool", is_enabled = true },
   { name = "philipzastrow", is_enabled = true },
   { name = "garytempus", is_enabled = true }
