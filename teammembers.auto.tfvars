@@ -13,7 +13,6 @@ dev_team_members = [
 ]
 
 technical_directors = [
-  "adamsimpson",
   "kaseybonifacio",
   "robtarr",
   "ryancromwell"
