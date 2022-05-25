@@ -8,7 +8,8 @@ dev_team_members = [
   { name = "ricardofearing", is_enabled = false },
   { name = "reedspool", is_enabled = true },
   { name = "philipzastrow", is_enabled = true },
-  { name = "garytempus", is_enabled = false }
+  { name = "garytempus", is_enabled = false },
+  { name = "mandykendall", is_enabled = true }
 ]
 
 technical_directors = [
