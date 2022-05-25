@@ -14,6 +14,5 @@ dev_team_members = [
 
 technical_directors = [
   "kaseybonifacio",
-  "robtarr",
-  "ryancromwell"
+  "robtarr"
 ]
