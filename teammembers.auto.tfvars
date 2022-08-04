@@ -9,7 +9,8 @@ dev_team_members = [
   { name = "reedspool", is_enabled = false },
   { name = "philipzastrow", is_enabled = true },
   { name = "garytempus", is_enabled = false },
-  { name = "mandykendall", is_enabled = true }
+  { name = "mandykendall", is_enabled = true },
+  { name = "melissathompson", is_enabled = true }
 ]
 
 technical_directors = [
