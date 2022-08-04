@@ -65,16 +65,16 @@ resource "aws_iam_user_login_profile" "user" {
 }
 
 resource "aws_organizations_account" "account" {
-  for_each  = local.all_user_names
+  for_each = local.all_user_names
 
   name      = "Dev Sandbox ${each.value}"
-  email     = "ryan+aws_${each.value}@heysparkbox.com"
+  email     = "tarr+aws_${each.value}@heysparkbox.com"
   role_name = "Administrator"
   parent_id = aws_organizations_organizational_unit.dev_team_ou.id
 }
 
 resource "aws_iam_role" "organization_account_access_role" {
-  for_each  = aws_organizations_account.account
+  for_each = aws_organizations_account.account
 
   name = "OrganizationAccountAccessRole-${each.value.id}"
 
@@ -100,14 +100,14 @@ EOF
 }
 
 resource "aws_iam_role_policy_attachment" "attach_administrator_access" {
-  for_each    = aws_iam_role.organization_account_access_role
+  for_each = aws_iam_role.organization_account_access_role
 
   role       = each.value.name
   policy_arn = "arn:aws:iam::aws:policy/AdministratorAccess"
 }
 
 resource "aws_iam_policy" "link_member_account_policy" {
-  for_each    = aws_organizations_account.account
+  for_each = aws_organizations_account.account
 
   name        = "LinkDevSandboxMemberAccountPolicy-${each.value.id}"
   description = "Allow Administrator access to the member account ${each.value.id}"
@@ -128,7 +128,7 @@ EOF
 }
 
 resource "aws_iam_user_policy_attachment" "attach_link_policy" {
-  for_each   = aws_iam_user.user
+  for_each = aws_iam_user.user
 
   user       = each.value.name
   policy_arn = aws_iam_policy.link_member_account_policy[each.value.name].arn
