@@ -2,7 +2,7 @@ dev_team_members = [
   { name = "adamsimpson", is_enabled = false },
   { name = "ryancromwell", is_enabled = false },
   { name = "bryanbraun", is_enabled = false },
-  { name = "yosevukilonzo", is_enabled = true },
+  { name = "yosevukilonzo", is_enabled = false },
   { name = "robtarr", is_enabled = true },
   { name = "kaseybonifacio", is_enabled = true },
   { name = "ricardofearing", is_enabled = false },
